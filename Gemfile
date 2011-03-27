@@ -11,6 +11,8 @@ gem 'spree'
 
 gem "spree_paypal_express",'1.0.0' , :git => "git://github.com/spree/spree_paypal_express.git"
 
+#gem "multi_currencies", :git => "git://github.com/pronix/spree-multi-currency.git"
+
 #gem "purchasing"
 
 # Use unicorn as the web server
