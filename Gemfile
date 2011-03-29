@@ -7,9 +7,13 @@ gem 'rails', '3.0.5'
 
 gem 'sqlite3'
 
-gem 'spree'
+gem 'mysql2'
 
-gem "spree_paypal_express",'1.0.0' , :git => "git://github.com/spree/spree_paypal_express.git"
+gem 'spree', '0.50.0'
+
+gem "spree_paypal_express" , :git => "git://github.com/spree/spree_paypal_express.git"
+
+gem "spree_multi_domain", :git => "git://github.com/spree/spree-multi-domain.git"
 
 #gem "multi_currencies", :git => "git://github.com/pronix/spree-multi-currency.git"
 

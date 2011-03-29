@@ -20,3 +20,13 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+
+#development:
+#  adapter: mysql2  # Rails 3.x uses the mysql2 adapter
+#  encoding: utf8
+#  database: app_development
+#  pool: 5
+#  username: root
+#  password: root
+#  socket: /var/run/mysqld/mysqld.sock

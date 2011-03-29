@@ -209,6 +209,7 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.string   "payment_state"
     t.string   "email"
     t.text     "special_instructions"
+    t.integer  "store_id"
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
@@ -326,6 +327,13 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
 
   add_index "products_promotion_rules", ["product_id"], :name => "index_products_promotion_rules_on_product_id"
   add_index "products_promotion_rules", ["promotion_rule_id"], :name => "index_products_promotion_rules_on_promotion_rule_id"
+
+  create_table "products_stores", :id => false, :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "store_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products_taxons", :id => false, :force => true do |t|
     t.integer "product_id"
@@ -454,6 +462,16 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.integer "country_id"
   end
 
+  create_table "stores", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.text     "domains"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "default",    :default => false
+    t.string   "email"
+  end
+
   create_table "tax_categories", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -474,7 +492,10 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "store_id"
   end
+
+  add_index "taxonomies", ["store_id"], :name => "index_taxonomies_on_store_id"
 
   create_table "taxons", :force => true do |t|
     t.integer  "taxonomy_id",                      :null => false
@@ -513,6 +534,7 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.boolean  "active",       :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "store_id"
   end
 
   create_table "users", :force => true do |t|

@@ -1,4 +1,4 @@
 .bundle
-
+.idea
 log/*.log
 tmp/
