@@ -1,0 +1,3 @@
+[submodule "vendor/extensions/extra-variant"]
+	path = vendor/extensions/extra-variant
+	url = git://github.com/cmer/spree-extra-variant.git

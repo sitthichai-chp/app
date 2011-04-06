@@ -15,6 +15,8 @@ gem "spree_paypal_express" , :git => "git://github.com/spree/spree_paypal_expres
 
 gem "spree_multi_domain", :git => "git://github.com/spree/spree-multi-domain.git"
 
+#gem "spree_extra_variant", :git => "git://github.com/cmer/spree-extra-variant.git"
+
 #gem "multi_currencies", :git => "git://github.com/pronix/spree-multi-currency.git"
 
 #gem "purchasing"
@@ -26,8 +28,11 @@ gem "spree_multi_domain", :git => "git://github.com/spree/spree-multi-domain.git
 # gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+#gem 'ruby-debug'
+#gem 'ruby-debug19' , :require => 'ruby-debug'
+ gem 'ruby-debug19'
+gem 'ruby-debug-ide'
+#gem 'ruby-debug-base'
 
 # Bundle the extra gems:
 # gem 'bj'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110314192118) do
+ActiveRecord::Schema.define(:version => 20110330181906) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -210,9 +210,11 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.string   "email"
     t.text     "special_instructions"
     t.integer  "store_id"
+    t.integer  "purchase_id"
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
+  add_index "orders", ["purchase_id"], :name => "index_orders_on_purchase_id"
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"
@@ -393,6 +395,17 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "purchase.rb", :force => true do |t|
+    t.string   "number",     :limit => 15
+    t.decimal  "item_total",               :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "total",                    :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state"
+  end
+
+  add_index "purchases", ["number"], :name => "index_purchases_on_number"
 
   create_table "return_authorizations", :force => true do |t|
     t.string   "number"
